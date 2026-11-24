@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="night">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080b22">
+  <meta name="description" content="Một không gian lãng mạn dưới ánh trăng: câu chuyện tình yêu, kỷ niệm, lá thư, chòm sao và âm nhạc của riêng bạn.">
+  <meta name="color-scheme" content="dark light">
+  <meta property="og:title" content="Tình Yêu Dưới Ánh Trăng">
+  <meta property="og:description" content="Giữa hàng triệu vì sao, anh vẫn tìm thấy một ánh sáng mang tên em.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/moon-favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/moon-favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Tình Yêu Dưới Ánh Trăng — Kỷ Niệm Của Chúng Ta</title>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('moonlight-theme');
+      if (savedTheme === 'day') document.documentElement.dataset.theme = 'day';
+      const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.documentElement.dataset.motion = reducedMotion ? 'reduced' : 'full';
+    } catch (error) {
+      document.documentElement.dataset.motion = 'full';
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng, đến nội dung chính</a>
+
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="icon-arrow-up" viewBox="0 0 24 24">
+        <path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/>
+      </symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+        <path d="M4 12h15M13.5 5.5 20 12l-6.5 6.5"/>
+      </symbol>
+      <symbol id="icon-chevron-left" viewBox="0 0 24 24">
+        <path d="m14.5 5-7 7 7 7"/>
+      </symbol>
+      <symbol id="icon-chevron-right" viewBox="0 0 24 24">
+        <path d="m9.5 5 7 7-7 7"/>
+      </symbol>
+      <symbol id="icon-heart" viewBox="0 0 24 24">
+        <path d="M20.8 5.7a5.2 5.2 0 0 0-7.4 0L12 7.1l-1.4-1.4a5.2 5.2 0 0 0-7.4 7.4L12 22l8.8-8.9a5.2 5.2 0 0 0 0-7.4Z"/>
+      </symbol>
+      <symbol id="icon-star" viewBox="0 0 24 24">
+        <path d="m12 2.8 2.8 5.8 6.4.9-4.6 4.5 1.1 6.3L12 17.3l-5.7 3 1.1-6.3-4.6-4.5 6.4-.9Z"/>
+      </symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24">
+        <path d="M20.7 14.1A8.7 8.7 0 0 1 9.9 3.3 8.8 8.8 0 1 0 20.7 14.1Z"/>
+      </symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4"/>
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18"/>
+      </symbol>
+      <symbol id="icon-upload" viewBox="0 0 24 24">
+        <path d="M12 16V3M7 8l5-5 5 5M4 15v5h16v-5"/>
+      </symbol>
+      <symbol id="icon-image" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="16" rx="3"/>
+        <circle cx="9" cy="10" r="2"/>
+        <path d="m4 18 5-5 4 4 3-3 4 4"/>
+      </symbol>
+      <symbol id="icon-play" viewBox="0 0 24 24">
+        <path d="m8 5 11 7-11 7Z"/>
+      </symbol>
+      <symbol id="icon-pause" viewBox="0 0 24 24">
+        <path d="M7 5h4v14H7zM14 5h4v14h-4z"/>
+      </symbol>
+      <symbol id="icon-next" viewBox="0 0 24 24">
+        <path d="m5 5 10 7L5 19ZM19 5v14"/>
+      </symbol>
+      <symbol id="icon-previous" viewBox="0 0 24 24">
+        <path d="m19 5-10 7 10 7ZM5 5v14"/>
+      </symbol>
+      <symbol id="icon-volume" viewBox="0 0 24 24">
+        <path d="M4 9h4l5-4v14l-5-4H4zM17 8a6 6 0 0 1 0 8M20 5a10 10 0 0 1 0 14"/>
+      </symbol>
+      <symbol id="icon-volume-off" viewBox="0 0 24 24">
+        <path d="M4 9h4l5-4v14l-5-4H4zM17 9l5 6M22 9l-5 6"/>
+      </symbol>
+      <symbol id="icon-envelope" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="3"/>
+        <path d="m4 7 8 6 8-6"/>
+      </symbol>
+      <symbol id="icon-mail-open" viewBox="0 0 24 24">
+        <path d="M3 10 12 4l9 6v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>
+        <path d="m3 10 9 7 9-7"/>
+      </symbol>
+      <symbol id="icon-expand" viewBox="0 0 24 24">
+        <path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/>
+      </symbol>
+      <symbol id="icon-zoom-in" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="6.5"/>
+        <path d="m16 16 5 5M7.5 10.5h6M10.5 7.5v6"/>
+      </symbol>
+      <symbol id="icon-zoom-out" viewBox="0 0 24 24">
+        <circle cx="10.5" cy="10.5" r="6.5"/>
+        <path d="m16 16 5 5M7.5 10.5h6"/>
+      </symbol>
+      <symbol id="icon-trash" viewBox="0 0 24 24">
+        <path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6M14 11v6"/>
+      </symbol>
+      <symbol id="icon-edit" viewBox="0 0 24 24">
+        <path d="m14 5 5 5M4 20l5-1L20 8a2.8 2.8 0 0 0-4-4L5 15Z"/>
+      </symbol>
+      <symbol id="icon-slideshow" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="13" rx="2"/>
+        <path d="m10 8 5 3-5 3ZM8 21h8M12 17v4"/>
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="m5 12 4 4L19 6"/>
+      </symbol>
+      <symbol id="icon-music" viewBox="0 0 24 24">
+        <path d="M9 18V5l11-2v13M9 9l11-2"/>
+        <circle cx="6" cy="18" r="3"/>
+        <circle cx="17" cy="16" r="3"/>
+      </symbol>
+      <symbol id="icon-sparkles" viewBox="0 0 24 24">
+        <path d="m12 3 1.7 4.3L18 9l-4.3 1.7L12 15l-1.7-4.3L6 9l4.3-1.7ZM19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9ZM5 14l.8 1.7L7.5 16l-1.7.8L5 18.5l-.8-1.7L2.5 16l1.7-.3Z"/>
+      </symbol>
+      <symbol id="icon-infinity" viewBox="0 0 24 24">
+        <path d="M12 12c-2-3-3.5-4-5.5-4a4.5 4.5 0 0 0 0 9c2 0 3.5-1 5.5-4Zm0 0c2-3 3.5-4 5.5-4a4.5 4.5 0 0 1 0 9c-2 0-3.5-1-5.5-4Z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="page-wipe" id="page-wipe" aria-hidden="true"></div>
+
+  <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
+    <div class="loading-orbit" aria-hidden="true">
+      <span class="loading-moon"></span>
+      <span class="loading-star loading-star-one"></span>
+      <span class="loading-star loading-star-two"></span>
+    </div>
+    <p class="loading-title">Tình yêu dưới ánh trăng</p>
+    <p class="loading-copy" id="loading-copy">Đang thắp sáng những vì sao…</p>
+    <div class="loading-track" aria-hidden="true"><span id="loading-progress"></span></div>
+    <span class="sr-only" id="loading-status">Đang tải trải nghiệm</span>
+  </div>
+
+  <div class="cosmic-background" aria-hidden="true">
+    <div class="sky-gradient"></div>
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="aurora aurora-three"></div>
+    <div class="galaxy-haze"></div>
+    <canvas id="cosmos-canvas"></canvas>
+    <div class="moonbeam"></div>
+    <div class="background-vignette"></div>
+  </div>
+
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+  <canvas class="effects-canvas" id="effects-canvas" aria-hidden="true"></canvas>
+  <div class="floating-hearts" id="floating-hearts" aria-hidden="true"></div>
+  <div class="toast-region" id="toast-region" role="status" aria-live="polite" aria-atomic="false"></div>
+
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner shell">
+      <a class="brand" href="#home" aria-label="Tình Yêu Dưới Ánh Trăng — về đầu trang">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="19" class="brand-moon-full"/>
+            <circle cx="31" cy="18" r="17" class="brand-moon-cut"/>
+            <path d="m37 8 1.2 3.3L41.5 12l-3.3 1.2L37 16.5l-1.2-3.3L32.5 12l3.3-.7Z" class="brand-spark"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Tình Yêu</span>
+          <span class="brand-subtitle">Dưới Ánh Trăng</span>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Điều hướng chính">
+        <a href="#story" class="nav-link"><span>Câu chuyện</span></a>
+        <a href="#memories" class="nav-link"><span>Kỷ niệm</span></a>
+        <a href="#letter" class="nav-link"><span>Lá thư</span></a>
+        <a href="#universe" class="nav-link"><span>Vũ trụ</span></a>
+        <a href="#music" class="nav-link"><span>Âm nhạc</span></a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Chuyển sang chế độ ban ngày" aria-pressed="false" title="Đổi ánh sáng">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#icon-moon"/></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#icon-sun"/></svg>
+        </button>
+        <a class="header-cta" href="#memories">
+          <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+          <span>Kỷ niệm của mình</span>
+        </a>
+        <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Điều hướng trên điện thoại" inert>
+      <div class="mobile-menu-inner">
+        <p class="mobile-menu-label">Một hành trình nhỏ</p>
+        <a href="#story" class="mobile-nav-link"><span>01</span> Câu chuyện của chúng ta</a>
+        <a href="#memories" class="mobile-nav-link"><span>02</span> Những kỷ niệm</a>
+        <a href="#letter" class="mobile-nav-link"><span>03</span> Lá thư dưới trăng</a>
+        <a href="#universe" class="mobile-nav-link"><span>04</span> Vũ trụ của chúng ta</a>
+        <a href="#music" class="mobile-nav-link"><span>05</span> Âm nhạc của riêng mình</a>
+        <a href="#special" class="mobile-nav-link"><span>06</span> Điều anh muốn nói</a>
+        <div class="mobile-menu-note">
+          <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+          <span>Mỗi kỷ niệm là một vì sao không bao giờ tắt.</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <div class="hero-stars" aria-hidden="true">
+        <span class="hero-star star-a">✦</span>
+        <span class="hero-star star-b">✧</span>
+        <span class="hero-star star-c">✦</span>
+        <span class="hero-star star-d">✧</span>
+        <span class="hero-star star-e">✦</span>
+      </div>
+
+      <button class="moon-button" id="moon-button" type="button" aria-label="Chạm vào mặt trăng để gửi một điều ước" title="Gửi một điều ước">
+        <span class="moon-orbit moon-orbit-one" aria-hidden="true"></span>
+        <span class="moon-orbit moon-orbit-two" aria-hidden="true"></span>
+        <span class="moon-halo" aria-hidden="true"></span>
+        <svg class="moon-art" viewBox="0 0 420 420" role="img" aria-label="Mặt trăng lưỡi liềm lung linh giữa bầu trời sao">
+          <defs>
+            <radialGradient id="moonDark" cx="35%" cy="35%" r="70%">
+              <stop offset="0" stop-color="#353962"/>
+              <stop offset=".7" stop-color="#1b2044"/>
+              <stop offset="1" stop-color="#0e1230"/>
+            </radialGradient>
+            <radialGradient id="moonLight" cx="32%" cy="30%" r="78%">
+              <stop offset="0" stop-color="#fffef6"/>
+              <stop offset=".32" stop-color="#f4f1ff"/>
+              <stop offset=".68" stop-color="#d8d6f2"/>
+              <stop offset=".9" stop-color="#b2b1d7"/>
+              <stop offset="1" stop-color="#898ab9"/>
+            </radialGradient>
+            <radialGradient id="craterShade" cx="35%" cy="30%" r="70%">
+              <stop offset="0" stop-color="#8d8daf" stop-opacity=".75"/>
+              <stop offset=".55" stop-color="#b8b5d6" stop-opacity=".4"/>
+              <stop offset=".82" stop-color="#f5f2ff" stop-opacity=".8"/>
+              <stop offset="1" stop-color="#b8b5d6" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="craterDeep" cx="65%" cy="70%" r="70%">
+              <stop offset="0" stop-color="#77799f" stop-opacity=".6"/>
+              <stop offset=".7" stop-color="#a3a1c4" stop-opacity=".25"/>
+              <stop offset="1" stop-color="#d9d6ef" stop-opacity=".65"/>
+            </radialGradient>
+            <filter id="moonGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="10" result="blur"/>
+              <feColorMatrix in="blur" type="matrix" values="0.7 0 0 0 0.15  0 0.7 0 0 0.18  0 0 1 0 0.45  0 0 0 .75 0" result="colored"/>
+              <feMerge><feMergeNode in="colored"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="moonTexture" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency=".035 .055" numOctaves="4" seed="17" result="noise"/>
+              <feColorMatrix in="noise" type="saturate" values="0" result="gray"/>
+              <feComponentTransfer in="gray" result="faded">
+                <feFuncA type="linear" slope=".13"/>
+              </feComponentTransfer>
+              <feBlend in="SourceGraphic" in2="faded" mode="soft-light"/>
+            </filter>
+            <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="8" dy="12" stdDeviation="12" flood-color="#060819" flood-opacity=".65"/>
+            </filter>
+            <mask id="crescentMask">
+              <rect width="420" height="420" fill="white"/>
+              <circle cx="252" cy="171" r="137" fill="black"/>
+            </mask>
+            <clipPath id="moonClip"><circle cx="210" cy="210" r="137"/></clipPath>
+          </defs>
+          <circle cx="210" cy="210" r="137" fill="url(#moonDark)" opacity=".92"/>
+          <g mask="url(#crescentMask)" filter="url(#moonGlow)">
+            <circle cx="210" cy="210" r="137" fill="url(#moonLight)"/>
+            <g clip-path="url(#moonClip)" filter="url(#moonTexture)">
+              <circle cx="151" cy="179" r="21" fill="url(#craterShade)"/>
+              <circle cx="126" cy="239" r="31" fill="url(#craterDeep)"/>
+              <circle cx="172" cy="292" r="17" fill="url(#craterShade)"/>
+              <circle cx="110" cy="192" r="10" fill="url(#craterDeep)"/>
+              <circle cx="174" cy="139" r="9" fill="url(#craterShade)"/>
+              <circle cx="101" cy="273" r="8" fill="url(#craterShade)"/>
+              <circle cx="154" cy="326" r="6" fill="url(#craterDeep)"/>
+              <circle cx="193" cy="216" r="12" fill="url(#craterShade)" opacity=".55"/>
+              <path d="M84 209c21-11 40-12 56-7M111 308c14 6 28 7 40 4M139 118c13 2 25 7 35 14" fill="none" stroke="#f8f6ff" stroke-opacity=".24" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <circle cx="210" cy="210" r="136" fill="none" stroke="#fff" stroke-opacity=".38" stroke-width="1.5"/>
+          </g>
+          <g class="moon-sparkles" fill="#fff9dc">
+            <circle cx="76" cy="142" r="2.2"/>
+            <circle cx="324" cy="260" r="1.8"/>
+            <circle cx="293" cy="88" r="2.4"/>
+            <path d="m350 155 2.2 6.2 6.2 2.2-6.2 2.2-2.2 6.2-2.2-6.2-6.2-2.2 6.2-2.2Z"/>
+            <path d="m76 312 1.6 4.4 4.4 1.6-4.4 1.6-1.6 4.4-1.6-4.4-4.4-1.6 4.4-1.6Z"/>
+          </g>
+        </svg>
+        <span class="moon-orbit-star orbit-star-one" aria-hidden="true">✦</span>
+        <span class="moon-orbit-star orbit-star-two" aria-hidden="true">✧</span>
+        <span class="moon-orbit-star orbit-star-three" aria-hidden="true">✦</span>
+        <span class="moon-wish-hint">Chạm để gửi điều ước</span>
+      </button>
+
+      <div class="hero-content shell">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow reveal">
+            <span class="eyebrow-line" aria-hidden="true"></span>
+            Một tình yêu, một vũ trụ
+          </p>
+          <h1 class="hero-title" id="hero-title">
+            <span class="title-line title-line-one reveal">Tình Yêu</span>
+            <span class="title-line title-line-two reveal">Dưới Ánh Trăng<span class="title-dot">.</span></span>
+          </h1>
+          <p class="hero-subtitle reveal">Giữa hàng triệu vì sao, anh vẫn tìm thấy một ánh sáng mang tên em.</p>
+          <div class="hero-actions reveal">
+            <a class="button button-primary magnetic" href="#story">
+              <span>Khám phá thế giới của chúng ta</span>
+              <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+            </a>
+            <button class="button button-ghost magnetic" id="hero-letter-button" type="button">
+              <svg class="icon" aria-hidden="true"><use href="#icon-envelope"/></svg>
+              <span>Mở lá thư của anh</span>
+            </button>
+          </div>
+          <div class="hero-meta reveal" aria-label="Những điều đặc biệt của câu chuyện">
+            <span><strong>01</strong> trái tim</span>
+            <span class="meta-divider" aria-hidden="true"></span>
+            <span><strong>∞</strong> kỷ niệm</span>
+            <span class="meta-divider" aria-hidden="true"></span>
+            <span><strong>Vĩnh cửu</strong> yêu thương</span>
+          </div>
+        </div>
+
+        <aside class="hero-note reveal" aria-label="Lời nhắn nhỏ dưới trăng">
+          <svg class="icon" aria-hidden="true"><use href="#icon-star"/></svg>
+          <p>“Em là điều đẹp nhất<br>mà bầu trời từng trao tặng anh.”</p>
+          <span>— Gửi em, dưới ánh trăng</span>
+        </aside>
+      </div>
+
+      <a class="scroll-cue" href="#story" aria-label="Cuộn xuống câu chuyện tình yêu">
+        <span class="scroll-cue-text">Bắt đầu hành trình</span>
+        <span class="scroll-cue-line" aria-hidden="true"><span></span></span>
+      </a>
+    </section>
+
+    <section class="story section" id="story" aria-labelledby="story-title">
+      <div class="section-ornament ornament-left" aria-hidden="true">✦</div>
+      <div class="section-ornament ornament-right" aria-hidden="true">✧</div>
+      <div class="shell">
+        <header class="section-heading centered reveal">
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Chương mở đầu <span class="eyebrow-line" aria-hidden="true"></span></p>
+          <h2 id="story-title">Câu chuyện của <em>chúng mình</em></h2>
+          <p class="section-intro">Không phải mọi tình yêu đều bắt đầu bằng một cú chạm mắt. Có những tình yêu bắt đầu bằng một khoảnh khắc rất nhỏ, rồi ở lại trong tim suốt cả cuộc đời.</p>
+        </header>
+
+        <div class="story-layout">
+          <article class="story-prose glass-card reveal">
+            <div class="story-prose-header">
+              <span class="chapter-number">01</span>
+              <div>
+                <p class="small-label">Nơi mọi thứ bắt đầu</p>
+                <h3>Một buổi tối, một ánh mắt</h3>
+              </div>
+            </div>
+            <p>Trăng hôm ấy tròn và sáng đến lạ kỳ. Anh nhớ em không nói gì nhiều, chỉ mỉm cười khi nghe anh kể chuyện. Nhưng chính nụ cười ấy đã khiến cả thành phố trở nên yên tĩnh hơn, còn nhịp tim anh thì lại hối hả.</p>
+            <p>Từ đêm đó, mỗi lần ngước lên trời, anh đều có một lý do để mỉm cười. Vì giữa vô vàn ngôi sao, anh đã tìm thấy em — người bạn đồng hành, người khiến những ngày bình thường trở nên đáng nhớ.</p>
+            <div class="story-signature">
+              <span class="signature-line" aria-hidden="true"></span>
+              <span>Và thế là, chúng mình bắt đầu.</span>
+              <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+            </div>
+          </article>
+
+          <aside class="story-visual reveal" aria-label="Hành trình tình yêu qua những con số">
+            <div class="love-orbit" aria-hidden="true">
+              <div class="orbit-ring orbit-ring-one"></div>
+              <div class="orbit-ring orbit-ring-two"></div>
+              <div class="orbit-ring orbit-ring-three"></div>
+              <div class="orbit-heart">
+                <svg viewBox="0 0 24 24"><use href="#icon-heart"/></svg>
+              </div>
+              <span class="orbit-dot orbit-dot-one"></span>
+              <span class="orbit-dot orbit-dot-two"></span>
+              <span class="orbit-dot orbit-dot-three"></span>
+            </div>
+            <div class="story-stats">
+              <div class="story-stat">
+                <strong class="counter" data-target="365" data-suffix="+">0</strong>
+                <span>ngày có em bên cạnh</span>
+              </div>
+              <div class="story-stat">
+                <strong class="counter" data-target="1000" data-suffix="+">0</strong>
+                <span>lý do để mỉm cười</span>
+              </div>
+              <div class="story-stat">
+                <strong>∞</strong>
+                <span>điều còn muốn cùng em làm</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="timeline-wrap">
+          <header class="timeline-heading reveal">
+            <span class="small-label">Dấu chân thời gian</span>
+            <h3>Những khoảnh khắc mình giữ lại</h3>
+          </header>
+          <ol class="timeline" aria-label="Timeline các kỷ niệm quan trọng">
+            <li class="timeline-item reveal">
+              <span class="timeline-marker" aria-hidden="true"><svg class="icon"><use href="#icon-star"/></svg></span>
+              <span class="timeline-date">Ngày đầu tiên</span>
+              <div class="timeline-card glass-card">
+                <span class="timeline-index">01</span>
+                <h4>Ánh mắt đầu tiên</h4>
+                <p>Một lời chào nhỏ, một nụ cười e thẹn, và một điều gì đó trong lòng anh thì thầm: “Là em rồi.”</p>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="timeline-marker" aria-hidden="true"><svg class="icon"><use href="#icon-heart"/></svg></span>
+              <span class="timeline-date">Buổi hẹn thứ hai</span>
+              <div class="timeline-card glass-card">
+                <span class="timeline-index">02</span>
+                <h4>Bàn tay nắm chặt</h4>
+                <p>Đi dưới mưa, cùng che một chiếc ô. Anh không nhớ mình có ướt hay không, chỉ nhớ bàn tay em thật ấm.</p>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="timeline-marker" aria-hidden="true"><svg class="icon"><use href="#icon-moon"/></svg></span>
+              <span class="timeline-date">Một đêm trăng sáng</span>
+              <div class="timeline-card glass-card">
+                <span class="timeline-index">03</span>
+                <h4>Lời yêu đầu tiên</h4>
+                <p>Dưới ánh trăng, ba tiếng “anh yêu em” được nói ra thật khẽ, nhưng vang vọng trong anh đến tận bây giờ.</p>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="timeline-marker" aria-hidden="true"><svg class="icon"><use href="#icon-infinity"/></svg></span>
+              <span class="timeline-date">Và những ngày sau</span>
+              <div class="timeline-card glass-card">
+                <span class="timeline-index">04</span>
+                <h4>Hành trình vẫn tiếp tục</h4>
+                <p>Chúng mình học cách yêu, học cách lắng nghe, học cách giữ những điều giản dị và làm cho chúng đặc biệt.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <blockquote class="story-quote reveal">
+          <svg class="quote-mark" aria-hidden="true">“</svg>
+          <p>Yêu em không phải là điều duy nhất anh làm mỗi ngày.<br>Nhưng đó là điều tuyệt vời nhất trong tất cả.</p>
+          <cite>— Người luôn chọn em</cite>
+          <span class="quote-stars" aria-hidden="true">✦ · ✧ · ✦</span>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="memories section" id="memories" aria-labelledby="memories-title">
+      <div class="shell">
+        <header class="section-heading split-heading reveal">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Kho tàng của riêng mình</p>
+            <h2 id="memories-title">Những kỷ niệm <em>lung linh</em></h2>
+          </div>
+          <p class="section-intro">Mỗi bức ảnh là một vì sao nhỏ. Hãy thêm vào đây những khoảnh khắc các bạn muốn giữ mãi — mọi thứ chỉ được lưu trên thiết bị này.</p>
+        </header>
+
+        <div class="memory-toolbar glass-card reveal">
+          <div class="storage-summary">
+            <span class="storage-icon" aria-hidden="true"><svg class="icon"><use href="#icon-image"/></svg></span>
+            <div>
+              <strong id="memory-count">Đang mở kho kỷ niệm…</strong>
+              <span id="storage-status">Ảnh của bạn ở lại trên thiết bị, không gửi đi đâu cả.</span>
+            </div>
+          </div>
+          <div class="memory-toolbar-actions">
+            <button class="button button-small button-primary" id="upload-trigger" type="button">
+              <svg class="icon" aria-hidden="true"><use href="#icon-upload"/></svg>
+              <span>Thêm kỷ niệm</span>
+            </button>
+            <button class="button button-small button-ghost" id="slideshow-trigger" type="button" disabled>
+              <svg class="icon" aria-hidden="true"><use href="#icon-slideshow"/></svg>
+              <span>Trình chiếu</span>
+            </button>
+            <button class="icon-button danger-hover" id="clear-gallery" type="button" aria-label="Xóa toàn bộ thư viện kỷ niệm" title="Xóa toàn bộ thư viện" disabled>
+              <svg class="icon" aria-hidden="true"><use href="#icon-trash"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="upload-zone reveal" id="upload-zone" tabindex="0" role="button" aria-label="Chọn hoặc kéo thả ảnh để thêm kỷ niệm" aria-describedby="upload-help">
+          <input id="photo-input" type="file" accept="image/jpeg,image/png,image/webp" multiple hidden>
+          <div class="upload-orbit" aria-hidden="true">
+            <span class="upload-orbit-ring"></span>
+            <span class="upload-orbit-icon"><svg class="icon"><use href="#icon-upload"/></svg></span>
+            <span class="upload-orbit-star">✦</span>
+          </div>
+          <h3>Đặt những khoảnh khắc của bạn vào đây</h3>
+          <p id="upload-help">Chọn ảnh từ máy tính hoặc thư viện điện thoại, hoặc kéo thả trực tiếp vào đây.</p>
+          <div class="upload-badges" aria-label="Định dạng và dung lượng được hỗ trợ">
+            <span>JPG</span><span>PNG</span><span>WEBP</span><span>Tối đa 5 MB / ảnh</span><span>Tối đa 30 ảnh</span>
+          </div>
+          <span class="upload-privacy"><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Riêng tư tuyệt đối — không tải ảnh lên máy chủ</span>
+          <div class="drop-overlay" aria-hidden="true"><span>Thả ảnh xuống đây</span></div>
+        </div>
+
+        <div class="gallery-heading reveal">
+          <div>
+            <span class="small-label">Bộ sưu tập của chúng mình</span>
+            <h3>Những ngày đáng nhớ</h3>
+          </div>
+          <div class="gallery-filters" role="group" aria-label="Sắp xếp thư viện ảnh">
+            <button class="filter-button is-active" type="button" data-sort="newest" aria-pressed="true">Mới nhất</button>
+            <button class="filter-button" type="button" data-sort="oldest" aria-pressed="false">Cũ nhất</button>
+            <button class="filter-button" type="button" data-sort="title" aria-pressed="false">Theo tên</button>
+          </div>
+        </div>
+
+        <div class="photo-grid" id="photo-grid" aria-live="polite" aria-label="Thư viện kỷ niệm"></div>
+
+        <div class="gallery-empty" id="gallery-empty">
+          <span class="empty-moon" aria-hidden="true"></span>
+          <h3>Kỷ niệm đầu tiên đang chờ bạn</h3>
+          <p>Một bức ảnh cũ, một buổi hoàng hôn, hay chỉ là khoảnh khắc các bạn cười thật tươi — tất cả đều xứng đáng được giữ lại.</p>
+          <button class="button button-ghost" id="empty-upload-trigger" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#icon-image"/></svg>
+            Chọn bức ảnh đầu tiên
+          </button>
+        </div>
+
+        <p class="storage-note reveal"><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Ảnh được tối ưu và lưu trong IndexedDB của trình duyệt. Xóa dữ liệu trình duyệt cũng sẽ xóa thư viện; hãy sao lưu các bức ảnh gốc ở nơi an toàn.</p>
+      </div>
+    </section>
+
+    <section class="letter section" id="letter" aria-labelledby="letter-title">
+      <div class="letter-glow" aria-hidden="true"></div>
+      <div class="shell letter-layout">
+        <div class="letter-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Gửi em, vào một đêm trăng</p>
+          <h2 id="letter-title">Lá thư anh viết<br><em>giữa những vì sao</em></h2>
+          <p>Có những lời khó nói khi đứng trước nhau. Anh viết chúng ra đây, để em có thể đọc lại mỗi khi nhớ anh, và mỗi khi cần nhớ rằng mình được yêu rất nhiều.</p>
+          <button class="button button-primary magnetic" id="letter-trigger" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#icon-envelope"/></svg>
+            <span>Mở lá thư của anh</span>
+          </button>
+          <span class="letter-hint">Một lá thư nhỏ, gửi trọn trái tim.</span>
+        </div>
+
+        <div class="envelope-scene reveal">
+          <span class="envelope-star envelope-star-one" aria-hidden="true">✦</span>
+          <span class="envelope-star envelope-star-two" aria-hidden="true">✧</span>
+          <span class="envelope-star envelope-star-three" aria-hidden="true">✦</span>
+          <span class="envelope-heart envelope-heart-one" aria-hidden="true">♥</span>
+          <span class="envelope-heart envelope-heart-two" aria-hidden="true">♥</span>
+          <div class="envelope-shadow" aria-hidden="true"></div>
+          <button class="envelope" id="envelope-button" type="button" aria-label="Mở lá thư tình yêu">
+            <span class="envelope-back" aria-hidden="true"></span>
+            <span class="letter-paper" aria-hidden="true">
+              <span class="paper-to">Gửi em,</span>
+              <span class="paper-line"></span>
+              <span class="paper-line short"></span>
+              <span class="paper-heart">♥</span>
+            </span>
+            <span class="envelope-front" aria-hidden="true"></span>
+            <span class="envelope-flap" aria-hidden="true"></span>
+            <span class="envelope-seal" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-heart"/></svg></span>
+          </button>
+          <span class="envelope-caption" aria-hidden="true">Chạm vào phong bì để mở</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="universe section" id="universe" aria-labelledby="universe-title">
+      <div class="shell">
+        <header class="section-heading centered reveal">
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Một vũ trụ nhỏ, thật riêng mình</p>
+          <h2 id="universe-title">Vũ trụ của <em>chúng ta</em></h2>
+          <p class="section-intro">Chạm vào những ngôi sao sáng. Mỗi ngôi sao giấu một lời nhắn, một lời hứa, hoặc một điều anh muốn em luôn nhớ.</p>
+        </header>
+
+        <div class="universe-console glass-card reveal">
+          <div class="universe-stage" id="universe-stage" aria-label="Bản đồ chòm sao tương tác">
+            <div class="universe-nebula" aria-hidden="true"></div>
+            <svg class="constellation-lines" id="constellation-lines" viewBox="0 0 800 520" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#bda7ff" stop-opacity=".15"/>
+                  <stop offset=".5" stop-color="#fff" stop-opacity=".65"/>
+                  <stop offset="1" stop-color="#ffc7e8" stop-opacity=".2"/>
+                </linearGradient>
+                <filter id="lineGlow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="2" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <g id="constellation-paths" fill="none" stroke="url(#lineGradient)" stroke-width="1.3" filter="url(#lineGlow)"></g>
+            </svg>
+
+            <div class="celestial-center" aria-hidden="true">
+              <span class="center-halo"></span>
+              <span class="center-heart"><svg viewBox="0 0 24 24"><use href="#icon-heart"/></svg></span>
+              <span class="center-label">CHÚNG TA</span>
+            </div>
+
+            <button class="star-node" type="button" style="--x:16%;--y:22%;--delay:0s" data-message="Em là ngôi sao đầu tiên anh thấy mỗi tối, và cũng là ngôi sao cuối cùng anh nghĩ đến trước khi chìm vào giấc ngủ." aria-label="Ngôi sao thứ nhất: mở lời nhắn">
+              <span class="star-core"></span><span class="star-label">Ngôi sao đầu tiên</span>
+            </button>
+            <button class="star-node" type="button" style="--x:38%;--y:13%;--delay:.7s" data-message="Nếu được chọn lại, anh vẫn sẽ chọn em — trong hàng triệu khả năng, cùng một khoảnh khắc, và trong mỗi kiếp sống." aria-label="Ngôi sao lựa chọn: mở lời nhắn">
+              <span class="star-core"></span><span class="star-label">Lựa chọn</span>
+            </button>
+            <button class="star-node" type="button" style="--x:66%;--y:20%;--delay:1.3s" data-message="Anh hứa sẽ ở bên em không chỉ trong những ngày trăng tròn, mà cả trong những đêm bão giông nhất." aria-label="Ngôi sao lời hứa: mở lời nhắn">
+              <span class="star-core"></span><span class="star-label">Lời hứa</span>
+            </button>
+            <button class="star-node" type="button" style="--x:84%;--y:43%;--delay:.4s" data-message="Những điều bình dị bên em — một tách trà, một câu chuyện cũ, một buổi chiều không làm gì cả — đều là hạnh phúc của anh." aria-label="Ngôi sao hạnh phúc: mở lời nhắn">
+              <span class="star-core"></span><span class="star-label">Hạnh phúc</span>
+            </button>
+            <button class="star-node" type="button" style="--x:70%;--y:76%;--delay:1.1s" data-message="Tương lai anh không cần thật xa hoa. Chỉ cần có em, có những tiếng cười, và một mái nhà luôn đợi nhau về." aria-label="Ngôi sao tương lai: mở lời nhắn">
+              <span class="star-core"></span><span class="star-label">Tương lai</span>
+            </button>
+            <button class="star-node" type="button" style="--x:40%;--y:83%;--delay:1.7s" data-message="Cảm ơn em đã đến, đã ở lại, và đã biến một cuộc đời bình thường thành câu chuyện anh muốn kể mãi." aria-label="Ngôi sao biết ơn: mở lời nhắn">
+              <span class="star-core"></span><span class="star-label">Biết ơn</span>
+            </button>
+            <button class="star-node" type="button" style="--x:19%;--y:65%;--delay:.9s" data-message="Dù vũ trụ rộng lớn đến đâu, anh vẫn tin rằng có một khoảnh khắc rất đẹp đã dẫn bước em đến bên anh." aria-label="Ngôi sao định mệnh: mở lời nhắn">
+              <span class="star-core"></span><span class="star-label">Định mệnh</span>
+            </button>
+
+            <span class="mini-planet planet-pink" aria-hidden="true"><span></span></span>
+            <span class="mini-planet planet-blue" aria-hidden="true"><span></span></span>
+            <span class="mini-planet planet-gold" aria-hidden="true"><span></span></span>
+            <span class="mini-moon" aria-hidden="true"></span>
+            <span class="cosmic-dust dust-one" aria-hidden="true"></span>
+            <span class="cosmic-dust dust-two" aria-hidden="true"></span>
+            <span class="cosmic-dust dust-three" aria-hidden="true"></span>
+          </div>
+
+          <aside class="cosmic-message" aria-live="polite">
+            <span class="message-icon" aria-hidden="true"><svg class="icon"><use href="#icon-sparkles"/></svg></span>
+            <p class="small-label" id="cosmic-message-label">Lời nhắn từ một ngôi sao</p>
+            <p class="cosmic-message-text" id="cosmic-message-text">Chạm vào một ngôi sao sáng trên bản đồ. Có thể em sẽ tìm thấy một điều anh chưa kịp nói.</p>
+            <div class="message-footer">
+              <span id="cosmic-message-progress">0 / 7 ngôi sao đã khám phá</span>
+              <button class="text-button" id="random-star-button" type="button">Gửi em một ngôi sao <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"/></svg></button>
+            </div>
+            <div class="message-progress-track" aria-hidden="true"><span id="cosmic-progress-bar"></span></div>
+          </aside>
+        </div>
+
+        <div class="universe-legend reveal">
+          <span><i class="legend-dot visited"></i> Ngôi sao đã khám phá</span>
+          <span><i class="legend-dot"></i> Ngôi sao đang chờ</span>
+          <span><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg> Chạm hoặc dùng phím Tab để khám phá</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="music section" id="music" aria-labelledby="music-title">
+      <div class="music-aurora" aria-hidden="true"></div>
+      <div class="shell music-layout">
+        <div class="music-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Âm thanh của những đêm trăng</p>
+          <h2 id="music-title">Để âm nhạc <em>ôm trọn</em> kỷ niệm</h2>
+          <p>Ba bản nhạc không lời được tạo ngay trên thiết bị, nhẹ nhàng như ánh trăng. Bạn cũng có thể thêm những bài hát của riêng mình — không bài hát nào được tải lên máy chủ.</p>
+          <div class="music-features">
+            <span><svg class="icon" aria-hidden="true"><use href="#icon-music"/></svg> Âm nhạc bản gốc</span>
+            <span><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Không tự động phát</span>
+            <span><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg> Dành riêng cho hai người</span>
+          </div>
+        </div>
+
+        <div class="music-player glass-card reveal" aria-label="Trình phát nhạc">
+          <div class="player-top">
+            <div class="album-art" id="album-art" aria-hidden="true">
+              <span class="album-halo"></span>
+              <span class="album-moon"></span>
+              <span class="album-star album-star-one">✦</span>
+              <span class="album-star album-star-two">✧</span>
+              <span class="album-ring"></span>
+            </div>
+            <div class="track-details">
+              <p class="player-label"><span class="status-dot" id="player-status-dot"></span> <span id="player-status">Sẵn sàng lắng nghe</span></p>
+              <h3 id="track-title">Ánh Trăng Đầu Tiên</h3>
+              <p id="track-artist">Love Under The Moonlight · Nhạc không lời</p>
+              <div class="visualizer" id="visualizer" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="player-progress">
+            <span id="current-time">0:00</span>
+            <input id="track-progress" type="range" min="0" max="180" value="0" step="0.1" aria-label="Tiến độ bài hát" aria-valuetext="0 phút 0 giây">
+            <span id="track-duration">3:00</span>
+          </div>
+
+          <div class="player-controls">
+            <button class="player-button" id="previous-track" type="button" aria-label="Bài hát trước" title="Bài trước">
+              <svg class="icon" aria-hidden="true"><use href="#icon-previous"/></svg>
+            </button>
+            <button class="play-button" id="play-toggle" type="button" aria-label="Phát nhạc" aria-pressed="false" title="Phát / Tạm dừng">
+              <svg class="icon icon-play" aria-hidden="true"><use href="#icon-play"/></svg>
+              <svg class="icon icon-pause" aria-hidden="true"><use href="#icon-pause"/></svg>
+            </button>
+            <button class="player-button" id="next-track" type="button" aria-label="Bài hát tiếp theo" title="Bài tiếp theo">
+              <svg class="icon" aria-hidden="true"><use href="#icon-next"/></svg>
+            </button>
+          </div>
+
+          <div class="player-secondary">
+            <button class="icon-button" id="mute-toggle" type="button" aria-label="Tắt tiếng" aria-pressed="false" title="Tắt / Bật tiếng">
+              <svg class="icon icon-volume" aria-hidden="true"><use href="#icon-volume"/></svg>
+              <svg class="icon icon-volume-off" aria-hidden="true"><use href="#icon-volume-off"/></svg>
+            </button>
+            <input id="volume-control" type="range" min="0" max="100" value="65" aria-label="Âm lượng">
+            <span id="volume-value">65%</span>
+          </div>
+
+          <div class="playlist-heading">
+            <span>Danh sách nhạc</span>
+            <button class="text-button" id="add-music-trigger" type="button">
+              <svg class="icon" aria-hidden="true"><use href="#icon-upload"/></svg> Thêm nhạc của bạn
+            </button>
+            <input id="audio-input" type="file" accept="audio/mpeg,audio/mp4,audio/wav,audio/ogg,audio/webm,.mp3,.m4a,.wav,.ogg,.webm" multiple hidden>
+          </div>
+          <ol class="playlist" id="playlist" aria-label="Danh sách bài hát"></ol>
+          <p class="music-privacy">Nhạc bạn thêm được lưu cục bộ trong trình duyệt. Hãy chỉ chọn các tệp bạn có quyền sử dụng.</p>
+        </div>
+      </div>
+      <audio id="audio-element" preload="metadata"></audio>
+    </section>
+
+    <section class="special section" id="special" aria-labelledby="special-title">
+      <div class="special-moonlight" aria-hidden="true"></div>
+      <div class="special-hearts" aria-hidden="true">
+        <span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+      </div>
+      <div class="shell special-content reveal">
+        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> Điều quan trọng nhất <span class="eyebrow-line" aria-hidden="true"></span></p>
+        <h2 id="special-title">Dù ngày mai<br><em>có ra sao…</em></h2>
+        <p class="special-message">Anh vẫn muốn chọn em.<br>Trong từng buổi bình minh, từng đêm trăng,<br>và trong tất cả những ngày chưa kịp đến.</p>
+        <button class="button button-primary magnetic" id="send-love-button" type="button">
+          <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+          <span>Gửi em một trái tim</span>
+        </button>
+        <p class="special-signature">Anh yêu em — hôm nay, ngày mai, và mãi mãi.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-stars" aria-hidden="true">✦ · ✧ · ✦</div>
+    <div class="shell footer-main">
+      <a class="brand footer-brand" href="#home" aria-label="Về đầu trang">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="19" class="brand-moon-full"/>
+            <circle cx="31" cy="18" r="17" class="brand-moon-cut"/>
+            <path d="m37 8 1.2 3.3L41.5 12l-3.3 1.2L37 16.5l-1.2-3.3L32.5 12l3.3-.7Z" class="brand-spark"/>
+          </svg>
+        </span>
+        <span class="brand-text"><span class="brand-name">Tình Yêu</span><span class="brand-subtitle">Dưới Ánh Trăng</span></span>
+      </a>
+      <p class="footer-message">Cảm ơn em đã là ánh sáng<br>trong đêm tối của anh.</p>
+      <button class="back-to-top" id="back-to-top" type="button" aria-label="Trở về đầu trang">
+        <span>Về đầu trang</span>
+        <svg class="icon" aria-hidden="true"><use href="#icon-arrow-up"/></svg>
+      </button>
+    </div>
+    <div class="shell footer-bottom">
+      <p>© <span id="current-year">2026</span> Tình Yêu Dưới Ánh Trăng. Được làm bằng cả trái tim.</p>
+      <p><svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg> Không máy chủ. Không theo dõi. Chỉ có kỷ niệm của bạn.</p>
+    </div>
+  </footer>
+
+  <dialog class="modal letter-modal" id="letter-dialog" aria-labelledby="letter-dialog-title">
+    <div class="modal-backdrop" data-close-dialog="letter-dialog"></div>
+    <div class="modal-panel letter-panel">
+      <button class="modal-close" type="button" data-close-dialog="letter-dialog" aria-label="Đóng lá thư">
+        <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+      </button>
+      <div class="letter-paper-modal">
+        <span class="paper-corner corner-top" aria-hidden="true">✦</span>
+        <span class="paper-corner corner-bottom" aria-hidden="true">✧</span>
+        <p class="letter-date" id="letter-date"></p>
+        <h2 id="letter-dialog-title">Em yêu của anh,</h2>
+        <div class="typewriter-text" id="typewriter-text" aria-live="polite"></div>
+        <p class="letter-signature">Mãi yêu em,<br><span>Người của em</span></p>
+        <div class="letter-paper-heart" aria-hidden="true">♥</div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="modal import-modal" id="import-dialog" aria-labelledby="import-title">
+    <div class="modal-backdrop" data-close-dialog="import-dialog"></div>
+    <div class="modal-panel import-panel">
+      <header class="modal-header">
+        <div>
+          <p class="small-label">Một bước nhỏ nữa</p>
+          <h2 id="import-title">Đặt tên cho kỷ niệm</h2>
+          <p>Xem trước ảnh, thêm tiêu đề và lời nhắn trước khi lưu.</p>
+        </div>
+        <button class="modal-close static" type="button" data-close-dialog="import-dialog" aria-label="Đóng cửa sổ xem trước">
+          <svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg>
+        </button>
+      </header>
+      <form id="import-form">
+        <div class="import-list" id="import-list"></div>
+        <div class="import-error" id="import-error" role="alert" hidden></div>
+        <footer class="modal-footer">
+          <button class="button button-ghost" type="button" data-close-dialog="import-dialog">Để sau</button>
+          <button class="button button-primary" id="save-photos" type="submit">
+            <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg>
+            <span>Lưu vào kỷ niệm</span>
+          </button>
+        </footer>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog class="modal lightbox-modal" id="lightbox-dialog" aria-labelledby="lightbox-title">
+    <div class="modal-backdrop" data-close-dialog="lightbox-dialog"></div>
+    <div class="modal-panel lightbox-panel">
+      <header class="lightbox-header">
+        <div>
+          <p class="small-label" id="lightbox-counter">Kỷ niệm 1 / 1</p>
+          <h2 id="lightbox-title">Một khoảnh khắc đáng nhớ</h2>
+        </div>
+        <div class="lightbox-actions">
+          <button class="icon-button" id="zoom-out" type="button" aria-label="Thu nhỏ ảnh" title="Thu nhỏ"><svg class="icon" aria-hidden="true"><use href="#icon-zoom-out"/></svg></button>
+          <button class="icon-button" id="zoom-in" type="button" aria-label="Phóng to ảnh" title="Phóng to"><svg class="icon" aria-hidden="true"><use href="#icon-zoom-in"/></svg></button>
+          <button class="icon-button" id="lightbox-fullscreen" type="button" aria-label="Xem toàn màn hình" title="Toàn màn hình"><svg class="icon" aria-hidden="true"><use href="#icon-expand"/></svg></button>
+          <button class="icon-button danger-hover" id="lightbox-delete" type="button" aria-label="Xóa ảnh này" title="Xóa ảnh"><svg class="icon" aria-hidden="true"><use href="#icon-trash"/></svg></button>
+          <button class="modal-close static" type="button" data-close-dialog="lightbox-dialog" aria-label="Đóng ảnh"><svg class="icon" aria-hidden="true"><use href="#icon-close"/></svg></button>
+        </div>
+      </header>
+      <div class="lightbox-stage" id="lightbox-stage">
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Ảnh trước"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-left"/></svg></button>
+        <div class="lightbox-image-wrap" id="lightbox-image-wrap"><img id="lightbox-image" src="" alt=""></div>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Ảnh tiếp theo"><svg class="icon" aria-hidden="true"><use href="#icon-chevron-right"/></svg></button>
+        <div class="lightbox-loading" id="lightbox-loading" hidden>Đang mở kỷ niệm…</div>
+      </div>
+      <div class="slideshow-controls" id="slideshow-controls" hidden>
+        <button class="button button-small button-ghost" id="slideshow-toggle" type="button"><svg class="icon" aria-hidden="true"><use href="#icon-pause"/></svg><span>Tạm dừng</span></button>
+        <span>Chuyển ảnh sau <strong id="slideshow-seconds">5</strong> giây</span>
+        <div class="slideshow-progress" aria-hidden="true"><span id="slideshow-progress-bar"></span></div>
+      </div>
+      <form class="photo-edit-form" id="photo-edit-form">
+        <div class="photo-edit-fields">
+          <label>Tên kỷ niệm<input id="edit-photo-title" type="text" maxlength="80" placeholder="Ví dụ: Buổi chiều bên biển"></label>
+          <label>Lời nhắn<input id="edit-photo-caption" type="text" maxlength="220" placeholder="Một điều bạn muốn nhớ…"></label>
+        </div>
+        <button class="button button-small button-ghost" type="submit"><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Lưu thay đổi</button>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog class="modal confirm-modal" id="confirm-dialog" aria-labelledby="confirm-title" aria-describedby="confirm-description">
+    <div class="modal-backdrop" data-close-dialog="confirm-dialog"></div>
+    <div class="modal-panel confirm-panel">
+      <span class="confirm-icon" aria-hidden="true"><svg class="icon"><use href="#icon-heart"/></svg></span>
+      <h2 id="confirm-title">Xóa kỷ niệm này?</h2>
+      <p id="confirm-description">Hành động này không thể hoàn tác.</p>
+      <div class="confirm-actions">
+        <button class="button button-ghost" type="button" data-close-dialog="confirm-dialog">Giữ lại</button>
+        <button class="button button-danger" id="confirm-action" type="button">Xóa kỷ niệm</button>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript>
+    <div class="noscript-message">
+      <h2>Bạn cần bật JavaScript để bước vào vũ trụ này</h2>
+      <p>Hãy bật JavaScript trong trình duyệt rồi tải lại trang để trải nghiệm đầy đủ các tương tác.</p>
+    </div>
+  </noscript>
+</body>
+</html>
